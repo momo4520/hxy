@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>momo index</title>
+	<style>
+		html,body{
+			height: 100%;
+			background-color: lightgray;
+		}
+		*{
+			padding: 0;
+			margin:0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		p{
+			line-height: 30px;
+		}
+		.clearfix:before, .clearfix:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.clearfix{
+			zoom:1;
+		}
+		.title{
+			background-color: skyblue;
+		}
+		
+		.title ul{
+			text-align: center;
+		}
+		.title li{
+			float: left;
+			
+
+		}
+		.title li a{
+			display: block;
+			width: 65px;
+			height: 60px;
+			padding: 10px;
+			line-height: 60px
+		}
+		.container {
+			width: 100%;
+			height: 100%;
+			background-color: pink;
+			border-radius: 20px;
+			margin-top: 5px;
+		}
+		.content{
+			width: 50%;
+			height: 50%;
+			margin:0 auto;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="title">
+		<!-- <h1>欢迎进入momo空间</h1> -->
+		<ul class="clearfix">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">读书笔记</a></li>
+			<li><a href="#">随写</a></li>
+			<li><a href="#">相册</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="content">
+			<h2>npm install --save 与 npm install --save-dev 的区别</h2>
+		<a href="http://www.cnblogs.com/hollen/p/5956012.html" target="_blank">原创作者博客链接</a>
+
+			<h3>以npm安装msbuild为例：</h3>
+			<h4>npm install msbuild:</h4>
+
+			<p>会把msbuild包安装到node_modules目录中
+			不会修改package.json
+			之后运行npm install命令时，不会自动安装msbuild</p>
+
+			<h4>npm install --save:</h4>
+
+			<p>会把msbuild包安装到node_modules目录中
+			会在package.json的dependencies属性下添加msbuild
+			之后运行npm install命令时，会自动安装msbuild到node_modules目录中
+			之后运行npm install --production或者注明NODE_ENV变量值为production时，会自动安装msbuild到node_modules目录中</p>
+
+			<h4>npm install --save-dev:</h4>
+
+			<p>会把msbuild包安装到node_modules目录中
+			会在package.json的devDependencies属性下添加msbuild
+			之后运行npm install命令时，会自动安装msbuild到node_modules目录中
+			之后运行npm install --production或者注明NODE_ENV变量值为production时，不会自动安装msbuild到node_modules目录中</p>
+			
+			<h3>使用原则:</h3>
+
+			<h4>运行时需要用到的包使用--save，否则使用--save-dev。</h4>
+		</div>
+	</div>
+</body>
+</html>
